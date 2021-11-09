@@ -70,6 +70,16 @@
             { card_img: 'a9.jpg', name: 'yellow tops', color: 'yellow', price: 1699, },
             { card_img: 'a8.jpg', name: 'white tops', color: 'white', price: 699, },
             { card_img: 'a13.jpg', name: 'night dress', color: 'pink', price: 799, },
+            { card_img: 'a11.jpg', name: 'long suits', color: 'black', price: 899, },
+            { card_img: 'a12.jpg', name: 'red suits', color: 'red', price: 1199, },
+            { card_img: 'a9.jpg', name: 'yellow tops', color: 'yellow', price: 1699, },
+            { card_img: 'a8.jpg', name: 'white tops', color: 'white', price: 699, },
+            { card_img: 'a13.jpg', name: 'night dress', color: 'pink', price: 799, },
+            { card_img: 'a11.jpg', name: 'long suits', color: 'black', price: 899, },
+            { card_img: 'a12.jpg', name: 'red suits', color: 'red', price: 1199, },
+            { card_img: 'a9.jpg', name: 'yellow tops', color: 'yellow', price: 1699, },
+            { card_img: 'a8.jpg', name: 'white tops', color: 'white', price: 699, },
+            { card_img: 'a13.jpg', name: 'night dress', color: 'pink', price: 799, },
         ];
         cards = '';
         data.forEach((result) => {
@@ -101,7 +111,7 @@
 
             var getFilterData = data.filter((filterItem) => {
 
-                if (filterItem.name.startsWith(getValue) || filterItem.color.startsWith(getValue)) {
+                if (filterItem.name.includes(getValue) || filterItem.color.startsWith(getValue)) {
                     return filterItem;
                 }
             });
