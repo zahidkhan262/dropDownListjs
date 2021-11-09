@@ -9,26 +9,96 @@
 
     <style>
         #country {
-            width: 20%;
+            width: 25%;
             padding: 5px 10px;
             border: 1px solid #0019fd;
             outline: 0;
+        }
+
+        #search {
+            padding: 10px;
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        #wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 300px;
+            background: #3447f3;
+            margin: 10px 0;
+        }
+
+        .img-card img {
+            width: 100%;
+        }
+
+        .card-body {
+            padding: 10px;
+            color: #fff;
+            font-size: 17px;
+        }
+
+        .d-flex-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     </style>
 </head>
 
 <body>
 
-    <select name="" id="country">
-        <option value="Ind">Ind</option>
-        <option value="Ban">Ban</option>
-        <option value="SL">SL</option>
-        <option value="SA">SA</option>
-        <option value="Pak">Pak</option>
-    </select>
 
 
-    <input type="text" id="country">
+
+    <input type="text" placeholder="search..." id="search">
+
+    <div id="wrapper"></div>
+
+
+
+    <script>
+        var data = [
+            { card_img: 'a11.jpg', name: 'long suits', color: 'black', price: 899, },
+            { card_img: 'a12.jpg', name: 'red suits', color: 'red', price: 1199, },
+            { card_img: 'a9.jpg', name: 'yellow tops', color: 'yellow', price: 1699, },
+            { card_img: 'a8.jpg', name: 'white tops', color: 'white', price: 699, },
+            { card_img: 'a13.jpg', name: 'night dress', color: 'pink', price: 799, },
+        ];
+        cards = '';
+        data.forEach((result) => {
+
+            cards += `
+    <div class="card">
+        <div class="img-card">
+            <img src="${result.card_img}" />
+        </div>
+        <div class="card-body">
+            <div class="d-flex-1">
+                <p>${result.name}</p>
+                <p>${result.price}</p>
+            </div>
+        <div class="color">${result.color}</div>
+        </div>
+    </div>
+
+        `
+        });
+        document.getElementById('wrapper').innerHTML = cards;
+
+
+    // now for filter the data
+
+
+
+
+    </script>
 
 </body>
 
