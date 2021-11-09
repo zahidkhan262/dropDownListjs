@@ -93,7 +93,43 @@
         document.getElementById('wrapper').innerHTML = cards;
 
 
-    // now for filter the data
+        // now for filter the data
+
+        document.getElementById('search').onkeyup = function () {
+            var getValue = this.value;
+            // console.log(getValue)
+
+            var getFilterData = data.filter((filterItem) => {
+
+                if (filterItem.name.startsWith(getValue) || filterItem.color.startsWith(getValue)) {
+                    return filterItem;
+                }
+            });
+            cards = '';
+            getFilterData.forEach((result) => {
+
+                cards += `
+    <div class="card">
+        <div class="img-card">
+            <img src="${result.card_img}" />
+        </div>
+        <div class="card-body">
+            <div class="d-flex-1">
+                <p>${result.name}</p>
+                <p>${result.price}</p>
+            </div>
+        <div class="color">${result.color}</div>
+        </div>
+    </div>
+
+        `
+            });
+            document.getElementById('wrapper').innerHTML = cards;
+
+
+
+
+        }
 
 
 
